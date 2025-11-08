@@ -96,6 +96,7 @@ const Navbar = () => {
                 fontWeight="bold"
                 color="brand.500"
                 letterSpacing="tight"
+                textTransform="uppercase"
               >
                 TechHillCity
               </Text>

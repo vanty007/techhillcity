@@ -19,7 +19,13 @@ const Footer = () => {
         >
           {/* Company Info */}
           <Box>
-            <Text fontSize="2xl" fontWeight="bold" color="brand.400" mb={4}>
+            <Text
+              fontSize="2xl"
+              fontWeight="bold"
+              color="brand.400"
+              mb={4}
+              textTransform="uppercase"
+            >
               TechHillCity
             </Text>
             <Text fontSize="sm" lineHeight="tall" mb={6}>
