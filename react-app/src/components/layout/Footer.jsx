@@ -194,7 +194,7 @@ const Footer = () => {
               <Flex gap={3} align="start">
                 <MapPin size={18} style={{ marginTop: "2px", flexShrink: 0 }} />
                 <Text fontSize="sm" lineHeight="tall">
-                  123 Tech Street, Silicon Valley, CA 94025
+                  Ajah-Sangotedo, Lagos State
                 </Text>
               </Flex>
               <Flex gap={3} align="center">
