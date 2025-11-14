@@ -4,13 +4,14 @@ import {
   Box,
   Flex,
   Container,
-  Button,
   IconButton,
   Link,
   Text,
   Stack,
+  Image,
 } from "@chakra-ui/react";
 import { Menu, Phone, Mail, Clock, X, ChevronDown } from "lucide-react";
+import logoImage from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +33,8 @@ const Navbar = () => {
     <Box as="header" w="full" position="relative">
       {/* Top Banner */}
       <Box
-        bg="brand.500"
-        color="white"
+        bg="white"
+        color="black"
         py={{ base: 0, md: 2 }}
         display={{ base: "none", md: "block" }}
       >
@@ -43,10 +44,10 @@ const Navbar = () => {
               <Link
                 as="a"
                 href="mailto:business@techhillcity.com"
-                color="white"
-                _hover={{ color: "black" }}
-                _active={{ color: "black" }}
-                _focus={{ color: "black" }}
+                color="black"
+                _hover={{ color: "brand.500" }}
+                _active={{ color: "brand.500" }}
+                _focus={{ color: "brand.500" }}
               >
                 <Flex align="center" gap={2}>
                   <Mail size={16} />
@@ -61,11 +62,11 @@ const Navbar = () => {
             <Link
               as="a"
               href="tel:+2349033805192"
-              color="white"
+              color="black"
               variant={"plain"}
-              _hover={{ color: "black" }}
-              _active={{ color: "black" }}
-              _focus={{ color: "black" }}
+              _hover={{ color: "brand.500" }}
+              _active={{ color: "brand.500" }}
+              _focus={{ color: "brand.500" }}
             >
               <Flex align="center" gap={2}>
                 <Phone size={16} />
@@ -78,7 +79,7 @@ const Navbar = () => {
 
       {/* Main Navigation */}
       <Box
-        bg="white"
+        bg="brand.500"
         boxShadow={isSticky ? "md" : "sm"}
         position={isSticky ? "fixed" : "relative"}
         top={0}
@@ -88,18 +89,22 @@ const Navbar = () => {
         transition="all 0.3s ease"
       >
         <Container maxW="container.xl">
-          <Flex justify="space-between" align="center" py={4}>
+          <Flex
+            justify="space-between"
+            align="center"
+            py={4}
+            maxHeight={"80px"}
+            overflow={"clip"}
+          >
             {/* Logo */}
             <Link as={RouterLink} to="/" _hover={{ textDecoration: "none" }}>
-              <Text
-                fontSize="2xl"
-                fontWeight="bold"
-                color="brand.500"
-                letterSpacing="tight"
-                textTransform="uppercase"
-              >
-                TechHillCity
-              </Text>
+              <Image
+                src={logoImage}
+                alt="Tech Hill City International Ltd"
+                h={{ base: "40px", md: "80px" }}
+                w="auto"
+                backgroundClip={"content-box"}
+              />
             </Link>
 
             {/* Desktop Menu */}
@@ -113,7 +118,7 @@ const Navbar = () => {
                 as={RouterLink}
                 to="/"
                 fontWeight="medium"
-                color="gray.700"
+                color="white"
                 _hover={{ color: "brand.500" }}
                 transition="color 0.2s"
               >
@@ -123,7 +128,7 @@ const Navbar = () => {
                 as={RouterLink}
                 to="/about"
                 fontWeight="medium"
-                color="gray.700"
+                color="white"
                 _hover={{ color: "brand.500" }}
                 transition="color 0.2s"
               >
@@ -143,7 +148,10 @@ const Navbar = () => {
                   if (servicesTimeoutRef.current) {
                     clearTimeout(servicesTimeoutRef.current);
                   }
-                  servicesTimeoutRef.current = setTimeout(() => setIsServicesOpen(false), 3000);
+                  servicesTimeoutRef.current = setTimeout(
+                    () => setIsServicesOpen(false),
+                    3000
+                  );
                 }}
                 onTouchStart={() => setIsServicesOpen(true)}
                 onClick={() => setIsServicesOpen(true)}
@@ -153,7 +161,7 @@ const Navbar = () => {
                   gap={1}
                   cursor="pointer"
                   fontWeight="medium"
-                  color="gray.700"
+                  color="white"
                   _hover={{ color: "brand.500" }}
                   transition="color 2s"
                 >
@@ -179,7 +187,7 @@ const Navbar = () => {
                       display="block"
                       px={4}
                       py={2}
-                      color="gray.700"
+                      color="white"
                       _hover={{ bg: "gray.50", color: "brand.500" }}
                       transition="all 0.2s"
                     >
@@ -191,7 +199,7 @@ const Navbar = () => {
                       display="block"
                       px={4}
                       py={2}
-                      color="gray.700"
+                      color="white"
                       _hover={{ bg: "gray.50", color: "brand.500" }}
                       transition="all 0.2s"
                     >
@@ -203,7 +211,7 @@ const Navbar = () => {
                       display="block"
                       px={4}
                       py={2}
-                      color="gray.700"
+                      color="white"
                       _hover={{ bg: "gray.50", color: "brand.500" }}
                       transition="all 0.2s"
                     >
@@ -217,7 +225,7 @@ const Navbar = () => {
                 as={RouterLink}
                 to="/projects"
                 fontWeight="medium"
-                color="gray.700"
+                color="white"
                 _hover={{ color: "brand.500" }}
                 transition="color 0.2s"
               >
@@ -227,7 +235,7 @@ const Navbar = () => {
                 as={RouterLink}
                 to="/contact"
                 fontWeight="medium"
-                color="gray.700"
+                color="white"
                 _hover={{ color: "brand.500" }}
                 transition="color 0.2s"
               >
@@ -253,7 +261,7 @@ const Navbar = () => {
               display={{ base: "block", md: "none" }}
               pb={4}
               borderTop="1px"
-              borderColor="gray.200"
+              borderColor="white"
               mt={2}
             >
               <Stack gap={4} mt={4}>
@@ -261,7 +269,7 @@ const Navbar = () => {
                   as={RouterLink}
                   to="/"
                   fontWeight="medium"
-                  color="gray.700"
+                  color="white"
                   _hover={{ color: "brand.500" }}
                   onClick={toggleMenu}
                 >
@@ -271,7 +279,7 @@ const Navbar = () => {
                   as={RouterLink}
                   to="/about"
                   fontWeight="medium"
-                  color="gray.700"
+                  color="white"
                   _hover={{ color: "brand.500" }}
                   onClick={toggleMenu}
                 >
@@ -280,7 +288,7 @@ const Navbar = () => {
                 <Box>
                   <Text
                     fontWeight="medium"
-                    color="gray.700"
+                    color="white"
                     mb={2}
                     as="button"
                     display="block"
@@ -341,7 +349,7 @@ const Navbar = () => {
                   as={RouterLink}
                   to="/projects"
                   fontWeight="medium"
-                  color="gray.700"
+                  color="white"
                   _hover={{ color: "brand.500" }}
                   onClick={toggleMenu}
                 >
@@ -351,7 +359,7 @@ const Navbar = () => {
                   as={RouterLink}
                   to="/contact"
                   fontWeight="medium"
-                  color="gray.700"
+                  color="white"
                   _hover={{ color: "brand.500" }}
                   onClick={toggleMenu}
                 >

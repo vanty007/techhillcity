@@ -1,6 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom'
-import { Box, Container, Flex, Grid, Text, Link, Stack, IconButton } from '@chakra-ui/react'
+import { Box, Container, Flex, Grid, Text, Link, Stack, IconButton , Image} from '@chakra-ui/react'
 import { Facebook, Twitter, Linkedin, Github, Mail, Phone, MapPin } from 'lucide-react'
+import logoImage from "../../assets/images/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -19,15 +20,15 @@ const Footer = () => {
         >
           {/* Company Info */}
           <Box>
-            <Text
-              fontSize="2xl"
-              fontWeight="bold"
-              color="brand.400"
-              mb={4}
-              textTransform="uppercase"
-            >
-              TechHillCity
-            </Text>
+            <Link as={RouterLink} to="/" _hover={{ textDecoration: "none" }}>
+              <Image
+                src={logoImage}
+                alt="Tech Hill City International Ltd"
+                h={{ base: "40px", md: "80px" }}
+                w="auto"
+                backgroundClip={"content-box"}
+              />
+            </Link>
             <Text fontSize="sm" lineHeight="tall" mb={6}>
               We have diversity of professional software engineers with more
               than 10 years of experience in delivering superior products.
