@@ -45,9 +45,9 @@ const Navbar = () => {
                 as="a"
                 href="mailto:business@techhillcity.com"
                 color="black"
-                _hover={{ color: "brand.500" }}
-                _active={{ color: "brand.500" }}
-                _focus={{ color: "brand.500" }}
+                _hover={{ textDecoration: "underline" }}
+                _active={{ textDecoration: "underline" }}
+                _focus={{ textDecoration: "underline" }}
               >
                 <Flex align="center" gap={2}>
                   <Mail size={16} />
@@ -94,7 +94,7 @@ const Navbar = () => {
             align="center"
             py={4}
             maxHeight={"80px"}
-            overflow={"clip"}
+            overflow={"visible"}
           >
             {/* Logo */}
             <Link as={RouterLink} to="/" _hover={{ textDecoration: "none" }}>
@@ -119,7 +119,7 @@ const Navbar = () => {
                 to="/"
                 fontWeight="medium"
                 color="white"
-                _hover={{ color: "brand.500" }}
+                _hover={{ opacity: 0.8 }}
                 transition="color 0.2s"
               >
                 Home
@@ -129,7 +129,7 @@ const Navbar = () => {
                 to="/about"
                 fontWeight="medium"
                 color="white"
-                _hover={{ color: "brand.500" }}
+                _hover={{ opacity: 0.8 }}
                 transition="color 0.2s"
               >
                 About Us
@@ -162,7 +162,7 @@ const Navbar = () => {
                   cursor="pointer"
                   fontWeight="medium"
                   color="white"
-                  _hover={{ color: "brand.500" }}
+                  _hover={{ opacity: 0.8 }}
                   transition="color 2s"
                 >
                   <Text>Services</Text>
@@ -179,7 +179,7 @@ const Navbar = () => {
                     borderRadius="md"
                     minW="200px"
                     py={2}
-                    zIndex={10}
+                    zIndex={10000}
                   >
                     <Link
                       as={RouterLink}
@@ -187,7 +187,7 @@ const Navbar = () => {
                       display="block"
                       px={4}
                       py={2}
-                      color="white"
+                      color="gray.700"
                       _hover={{ bg: "gray.50", color: "brand.500" }}
                       transition="all 0.2s"
                     >
@@ -199,7 +199,7 @@ const Navbar = () => {
                       display="block"
                       px={4}
                       py={2}
-                      color="white"
+                      color="gray.700"
                       _hover={{ bg: "gray.50", color: "brand.500" }}
                       transition="all 0.2s"
                     >
@@ -211,7 +211,7 @@ const Navbar = () => {
                       display="block"
                       px={4}
                       py={2}
-                      color="white"
+                      color="gray.700"
                       _hover={{ bg: "gray.50", color: "brand.500" }}
                       transition="all 0.2s"
                     >
@@ -226,7 +226,7 @@ const Navbar = () => {
                 to="/projects"
                 fontWeight="medium"
                 color="white"
-                _hover={{ color: "brand.500" }}
+                _hover={{ opacity: 0.8 }}
                 transition="color 0.2s"
               >
                 Projects
@@ -236,7 +236,7 @@ const Navbar = () => {
                 to="/contact"
                 fontWeight="medium"
                 color="white"
-                _hover={{ color: "brand.500" }}
+                _hover={{ opacity: 0.8 }}
                 transition="color 0.2s"
               >
                 Contact
@@ -249,7 +249,9 @@ const Navbar = () => {
               onClick={toggleMenu}
               aria-label="Toggle menu"
               variant="ghost"
-              colorScheme="brand"
+              color="white"
+              _hover={{ bg: "whiteAlpha.200" }}
+              _active={{ bg: "whiteAlpha.300" }}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </IconButton>
@@ -270,7 +272,7 @@ const Navbar = () => {
                   to="/"
                   fontWeight="medium"
                   color="white"
-                  _hover={{ color: "brand.500" }}
+                  _hover={{ opacity: 0.8 }}
                   onClick={toggleMenu}
                 >
                   Home
@@ -280,7 +282,7 @@ const Navbar = () => {
                   to="/about"
                   fontWeight="medium"
                   color="white"
-                  _hover={{ color: "brand.500" }}
+                  _hover={{ opacity: 0.8 }}
                   onClick={toggleMenu}
                 >
                   About Us
@@ -307,8 +309,8 @@ const Navbar = () => {
                         as={RouterLink}
                         to="/services/it"
                         fontSize="sm"
-                        color="gray.600"
-                        _hover={{ color: "brand.500" }}
+                        color="white"
+                        _hover={{ opacity: 0.8 }}
                         onClick={() => {
                           setIsServicesOpen(false);
                           toggleMenu();
@@ -320,8 +322,8 @@ const Navbar = () => {
                         as={RouterLink}
                         to="/services/web"
                         fontSize="sm"
-                        color="gray.600"
-                        _hover={{ color: "brand.500" }}
+                        color="white"
+                        _hover={{ opacity: 0.8 }}
                         onClick={() => {
                           setIsServicesOpen(false);
                           toggleMenu();
@@ -333,8 +335,8 @@ const Navbar = () => {
                         as={RouterLink}
                         to="/services/mobile"
                         fontSize="sm"
-                        color="gray.600"
-                        _hover={{ color: "brand.500" }}
+                        color="white"
+                        _hover={{ opacity: 0.8 }}
                         onClick={() => {
                           setIsServicesOpen(false);
                           toggleMenu();
@@ -350,7 +352,7 @@ const Navbar = () => {
                   to="/projects"
                   fontWeight="medium"
                   color="white"
-                  _hover={{ color: "brand.500" }}
+                  _hover={{ opacity: 0.8 }}
                   onClick={toggleMenu}
                 >
                   Projects
@@ -360,7 +362,7 @@ const Navbar = () => {
                   to="/contact"
                   fontWeight="medium"
                   color="white"
-                  _hover={{ color: "brand.500" }}
+                  _hover={{ opacity: 0.8 }}
                   onClick={toggleMenu}
                 >
                   Contact
